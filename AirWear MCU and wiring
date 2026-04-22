@@ -1,0 +1,24 @@
+## Hardware
+
+### Target Board
+Waveshare ESP32-S3-Touch-LCD-1.47
+
+### Sensor Wiring
+| Sensor | Pin | ESP32-S3 GPIO |
+|---|---|---|
+| BMV080 | VCC | 3.3V |
+| BMV080 | GND | GND |
+| BMV080 | SDA | GPIO6 |
+| BMV080 | SCL | GPIO5 |
+| ENS160 | VCC | 3.3V (shared with BMV080) |
+| ENS160 | GND | GND |
+| ENS160 | SDA | GPIO6 (shared with BMV080) |
+| ENS160 | SCL | GPIO5 (shared with BMV080) |
+| GPS | VCC | VBUS (5V) |
+| GPS | GND | GND |
+| GPS | TX | GPIO8 |
+| GPS | RX | GPIO7 |
+
+> ⚠️ BMV080 is sensitive to power supply noise. Add a 10µF and 100nF ceramic capacitor across VCC and GND as close to the sensor as possible.
+
+> ⚠️ GPS must be powered from VBUS (5V), not 3.3V. Keep GPS on a separate power rail from the BMV080 to avoid supply noise.
